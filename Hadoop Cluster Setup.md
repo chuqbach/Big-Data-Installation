@@ -13,9 +13,11 @@ Set your hostname to relative name (node1, node2, node3, etc.)
 * **Change your hosts file**<br/>
 `sudo nano /etc/hosts`<br/>
 Add the following line in the structure `IP name`<br/>
-`192.168.0.1 node1`<br/>
-`192.168.0.2 node2`<br/>
-`192.168.0.3 node3`
+```
+192.168.0.1 node1
+192.168.0.2 node2
+192.168.0.3 node3
+```
 
 **Notice: Remember to delete/comment the following line if exists**<br/>
 > ```# 127.0.1.1 node1 ```
