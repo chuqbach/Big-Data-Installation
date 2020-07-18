@@ -111,6 +111,9 @@ spark.history.fs.update.interval  10s
 spark.history.ui.port             18080
 ```
 
+Create hdfs directory to store spark logs  
+`hdfs dfs -mkdir /spark-logs`  
+
 #### 2.4.2. Spark Standalone Cluster Manager
 
 On Spark Master node, copy the spark directory to all slave nodes
@@ -153,7 +156,14 @@ To stop Spark Standalone Cluster mode, do
 
 ### Submit jobs to Spark Submit
 
-**Example: Run Mobile App Schemaless Consumer**  
+**Example**
+```
+spark-submit --deploy-mode client \
+               --class org.apache.spark.examples.SparkPi \
+               $SPARK_HOME/examples/jars/spark-examples_2.11-2.2.0.jar 10
+```
+
+**Run Mobile App Schemaless Consumer**  
 ```
 $SPARK_HOME/bin/spark-submit --conf "spark.driver.extraJavaOptions=-Dhttp.proxyHost=10.56.224.31 -Dhttp.proxyPort=3128 -Dhttps.proxyHost=10.56.224.31 -Dhttps.proxyPort=3128" --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.4 --master spark://10.56.237.195:7077 --deploy-mode client /home/odyssey/projects/mapp/kafka_2_hadoop/Schemaless_Structure_Streaming.py
 ```
