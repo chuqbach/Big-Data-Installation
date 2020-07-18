@@ -69,7 +69,8 @@ In order to use Hive Metastore, a Database is required to store the Hive Metadat
 
 Before you can run the Hive metastore with a remote PostgreSQL database, you must configure a connector to the remote PostgreSQL database, set up the initial database schema, and configure the PostgreSQL user account for the Hive user.
 
-**Install and start PostgreSQL**
+**Install and start PostgreSQL**  
+Run the following to install PostgreSQL Database  
 `sudo apt-get install postgresql`
 
 To ensure that your PostgreSQL server will be accessible over the network, you need to do some additional configuration.
