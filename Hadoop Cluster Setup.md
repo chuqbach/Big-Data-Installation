@@ -109,7 +109,10 @@ Assign permission for user hadoop on these folders<br/>
 `sudo chown -R hadoop /opt/yarn`<br/>
 `sudo chown -R hadoop /opt/mr-history`
 
-Download the installation Hadoop package from its website: [https://hadoop.apache.org/releases.html](url)<br/>
+Locate to /home/hadoop directory  
+`cd ~`  
+
+Download the installation Hadoop package from its website: [https://hadoop.apache.org/releases.html](https://hadoop.apache.org/releases.html)<br/>
 `wget -c -O hadoop.tar.gz http://mirrors.viethosting.com/apache/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz`
 
 Extract the file<br/>
