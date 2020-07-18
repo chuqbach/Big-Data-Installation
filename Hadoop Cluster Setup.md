@@ -415,7 +415,8 @@ Create a books directory in HDFS
 `hdfs dfs -mkdir /books`
 
 Grab a few books from the Gutenberg project  
-cd ~
+`cd ~`
+
 ```
 wget -O alice.txt https://www.gutenberg.org/files/11/11-0.txt
 wget -O holmes.txt https://www.gutenberg.org/files/1661/1661-0.txt
@@ -425,16 +426,16 @@ wget -O frankenstein.txt https://www.gutenberg.org/files/84/84-0.txt
 Then put the three books through HDFS, in the booksdirectory  
 `hdfs dfs -put alice.txt holmes.txt frankenstein.txt /books`  
 
-List the contents of the book directory
+List the contents of the book directory  
 `hdfs dfs -ls /books`
 
-Move one of the books to the local filesystem
+Move one of the books to the local filesystem  
 `hdfs dfs -get /books/alice.txt`
 
 ### 4.2. Submit MapReduce Jobs to YARN
 YARN jobs are packaged into jar files and submitted to YARN for execution with the command yarn jar. The Hadoop installation package provides sample applications that can be run to test your cluster. You’ll use them to run a word count on the three books previously uploaded to HDFS.  
 
-Submit a job with the sample jar to YARN. On node-master, run
+Submit a job with the sample jar to YARN. On node-master, run  
 `yarn jar /opt/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.1.jar wordcount "/books/*" output`
 
 After the job is finished, you can get the result by querying HDFS with hdfs dfs -ls output. In case of a success, the output will resemble:  
@@ -446,5 +447,3 @@ Found 2 items
 
 Print the result with:  
 `hdfs dfs -cat output/part-r-00000 | less`
-
-
