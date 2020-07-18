@@ -400,8 +400,10 @@ To check if the services is successfully started, *jps* to show the services
 
 ### 3.2. Monitor the services on browser
 
-For Namenode<br/>
-`https://IP:9870`
+For Namenode of Hadoop 3.x.x<br/>
+`https://IP:9870`  
+For Namenode of Hadoop 2.x.x  
+`https://IP:50070` 
 
 For Yarn<br/>
 `https://IP:8088`
