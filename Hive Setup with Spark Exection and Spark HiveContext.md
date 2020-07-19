@@ -170,7 +170,7 @@ In order to avoid the issue  `Cannot connect to hive using beeline, user root ca
   <property>
     <name>hadoop.proxyuser.[username].hosts</name>
     <value>*</value>
-</property>
+  </property>
 ```
 
 ### 2.4.3. Start Hive Metastore Server & HiveServer2
@@ -227,6 +227,7 @@ Next, add the Spark libs to Hive's class path as below.
 Edit `/opt/hive/bin/hive` file (backup this file is if anything wrong happens)  
 `cp hive hive_backup`  
 `nano hive`  
+
 Add Spark Libs to Hive  
 ```
 for f in ${SPARK_HOME}/jars/*.jar; do
