@@ -44,10 +44,10 @@ Set Java Environment Variable <br/>
 * **Locate where java is installed<br/>**
 `update-alternatives --config java`<br/>
 The install path should be like this 
->  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/
+>  /usr/lib/jvm/java-8-openjdk-amd64/
 * **Add the JAVA_HOME variable to bashrc file:<br/>**
 `nano ~/.bashrc`<br/>
-`export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/`<br/>
+`export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/`<br/>
 
 ### 1.4. Create dedicated user and group for Hadoop
 We will use a dedicated Hadoop user account for running Hadoop applications. While that’s not required but it is recommended because it helps to separate the Hadoop installation from other software applications and user accounts running on the same machine (security, permissions, backups, etc).
