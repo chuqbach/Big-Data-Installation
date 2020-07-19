@@ -77,17 +77,17 @@ To ensure that your PostgreSQL server will be accessible over the network, you n
 
 First you need to edit the `postgresql.conf` file. Set the `listen_addresses` property to `*`, to make sure that the PostgreSQL server starts listening on all your network interfaces. Also make sure that the `standard_conforming_strings property` is set to `off`.
 
-`nano /etc/postgresql/10/main/postgresql.conf`  
+`sudo nano /etc/postgresql/10/main/postgresql.conf`  
 
 Adjust the required properties  
 
 ```
-listen_addresses    '*'
-standard_conforming_strings property      off
+listen_addresses = '*'
+standard_conforming_strings      off
 ```
 
 You also need to configure authentication for your network in `pg_hba.conf`. You need to make sure that the PostgreSQL user that you will create later in this procedure will have access to the server from a remote host. To do this, add a new line into `pg_hba.conf` that has the following information:  
-`nano /etc/postgresql/10/main/pg_hba.conf`  
+`sudo nano /etc/postgresql/10/main/pg_hba.conf`  
 Add the following line to the file
 ```
 host    all         all         0.0.0.0         0.0.0.0               md5
