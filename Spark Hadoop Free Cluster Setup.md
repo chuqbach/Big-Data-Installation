@@ -160,7 +160,7 @@ To stop Spark Standalone Cluster mode, do
 ```
 spark-submit --deploy-mode client \
                --class org.apache.spark.examples.SparkPi \
-               $SPARK_HOME/examples/jars/spark-examples_2.11-2.2.0.jar 10
+               $SPARK_HOME/examples/jars/spark-examples_2.12-3.0.0.jar 10
 ```
 
 **Run Mobile App Schemaless Consumer**  
