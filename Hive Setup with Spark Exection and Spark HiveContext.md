@@ -113,21 +113,6 @@ postgres=# CREATE USER hive WITH PASSWORD '123123';
 postgres=# CREATE DATABASE metastore;
 ```
 
-Use the Hive Schema Tool to create the metastore tables.  
-`/opt/hive/bin/schematool -dbType postgres -initSchema`
-
-
-The output should be like
-```
-Metastore connection URL:	 jdbc:postgresql://localhost:5432/metastore
-Metastore Connection Driver :	 org.postgresql.Driver
-Metastore connection User:	 hive
-Starting metastore schema initialization to 2.3.0
-Initialization script hive-schema-2.3.0.postgres.sql
-Initialization script completed
-schemaTool completed
-```
-
 ### 2.4.2. Adjust the Hive and Hadoop config files for the Hive Metastore 
 In /opt/hive/conf, create config file hive-site.xml from hive-default.xml.template (or not)  
 `nano hive-site.xml`  
@@ -159,6 +144,7 @@ Add the following lines
     <name>hive.metastore.warehouse.dir</name>
     <value>hdfs://192.168.0.5:9000/user/hive/warehouse</value>
   </property>
+</configuration>
 ```
 
 In order to avoid the issue  `Cannot connect to hive using beeline, user root cannot impersonate anonymous` when connecting to HiveServer2 from `beeline`, from hadoop/etc/hadoop, add to the core-site.xml, with `[username]` is your local user that will be use in `beeline`   
@@ -174,6 +160,21 @@ In order to avoid the issue  `Cannot connect to hive using beeline, user root ca
 ```
 
 ### 2.4.3. Start Hive Metastore Server & HiveServer2
+
+Use the Hive Schema Tool to create the metastore tables.  
+`/opt/hive/bin/schematool -dbType postgres -initSchema`
+
+
+The output should be like
+```
+Metastore connection URL:	 jdbc:postgresql://localhost:5432/metastore
+Metastore Connection Driver :	 org.postgresql.Driver
+Metastore connection User:	 hive
+Starting metastore schema initialization to 2.3.0
+Initialization script hive-schema-2.3.0.postgres.sql
+Initialization script completed
+schemaTool completed
+```
 
 Respectively start Hive Metastore Server and HiveServer2 services  
 `hive --service metastore`  
