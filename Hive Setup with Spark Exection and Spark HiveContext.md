@@ -214,6 +214,14 @@ First, add the following config to `hive-site.xml` in `/opt/hive/conf`
   </property>
 ```
 
+Then configuring YARN to distribute an equal share of resources for jobs in the YARN cluster.  
+```
+<property>
+  <name>yarn.resourcemanager.scheduler.class</name>
+  <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler</value>
+</property>
+```  
+
 Next, add the Spark libs to Hive's class path as below.
 
 Edit `/opt/hive/bin/hive` file (backup this file is if anything wrong happens)  
@@ -224,6 +232,14 @@ Add Spark Libs to Hive
 for f in ${SPARK_HOME}/jars/*.jar; do
   CLASSPATH=${CLASSPATH}:$f;
 done
+```
+
+Finally, upload all jars in `$SPARK_HOME/jars` to hdfs folder (for example:hdfs:///xxxx:9000/spark-jars) and add following in `hive-site.xml`  
+```
+<property>
+  <name>spark.yarn.jars</name>
+  <value>hdfs://xxxx:9000/spark-jars/*</value>
+</property>
 ```
 
 You may get below exception if you missed the CLASSPATH configuration above.  
@@ -263,6 +279,8 @@ Loading data to table default.pokes
 OK
 Time taken: 30.264 seconds
 ```
+
+
 
 ## 2.5. Connecting Apache Spark to Apache Hive
 ### 2.5.1 Config hive-site.xml and spark-default.sh
