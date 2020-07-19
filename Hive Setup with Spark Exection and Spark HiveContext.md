@@ -206,7 +206,7 @@ While MR remains the default engine for historical reasons, it is itself a histo
 
 First, add the following config to `hive-site.xml` in `/opt/hive/conf`  
 ```
-<property>
+  <property>
     <name>hive.execution.engine</name>
     <value>spark</value>
     <description>
