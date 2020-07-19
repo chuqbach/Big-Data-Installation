@@ -9,7 +9,7 @@ Below is the requirement items that needs to be installed/setup before installin
 
 # 2. Download and Install Apache Hive
 
-In the Apache Hive Download [https://spark.apache.org/downloads.html](https://downloads.apache.org/hive/), choose your Hive release version that use would like to install. 
+In the Apache Hive Download [https://downloads.apache.org/hive/](https://downloads.apache.org/hive/), choose your Hive release version that use would like to install. 
 
 Released Version: currently Spark has 2 stable version
 - Hive 2.x: This release works with Hadoop 2.x.y
