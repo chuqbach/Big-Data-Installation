@@ -49,10 +49,11 @@ Add the following line to the **.bashrc** file
 ```
 # Set Spark Environment Variable
 export SPARK_HOME=/opt/spark
+export PATH=$PATH:$SPARK_HOME/bin
 export PYSPARK_PYTHON=python3
-export PYSPARK_DRIVER_PYTHON="jupyter" 
-export PYSPARK_DRIVER_PYTHON_OPTS="notebook --no-browser --port=8889" 
-export SPARK_LOCAL_IP=192.168.0.1 # Your Master IP
+#export PYSPARK_DRIVER_PYTHON="jupyter" 
+#export PYSPARK_DRIVER_PYTHON_OPTS="notebook --no-browser --port=8889" 
+#export SPARK_LOCAL_IP=192.168.0.1 # Your Master IP
 
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native:$LD_LIBRARY_PATH
