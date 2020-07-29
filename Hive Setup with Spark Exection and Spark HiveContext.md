@@ -236,7 +236,13 @@ for f in ${SPARK_HOME}/jars/*.jar; do
 done
 ```
 
-Finally, upload all jars in `$SPARK_HOME/jars` to hdfs folder (for example:hdfs:///xxxx:9000/spark-jars) and add following in `hive-site.xml`  
+Finally, upload all jars in `$SPARK_HOME/jars` to hdfs folder (for example:hdfs:///xxxx:9000/spark-jars):
+``` 
+hdfs dfs -mkdir /spark-jar
+hdfs dfs -put /opt/spark/jars/* /spark-jar
+```
+
+and add following in `hive-site.xml`  
 ```
 <property>
   <name>spark.yarn.jars</name>
