@@ -103,12 +103,6 @@ Firstly, The following directory also need to be create on /opt/ directory
  |    |-- logs
 ```
 
-Assign permission for user hadoop on these folders<br/>
-`sudo chown -R hadoop /opt/hadoop`<br/>
-`sudo chown -R hadoop /opt/hdfs`<br/>
-`sudo chown -R hadoop /opt/yarn`<br/>
-`sudo chown -R hadoop /opt/mr-history`
-
 Locate to /home/hadoop directory  
 `cd ~`  
 
@@ -117,6 +111,14 @@ Download the installation Hadoop package from its website: [https://hadoop.apach
 
 Extract the file<br/>
 `sudo tar -xvf hadoop.tar.gz --directory=/opt/hadoop --strip 1`
+
+
+Assign permission for user hadoop on these folders<br/>
+`sudo chown -R hadoop /opt/hadoop`<br/>
+`sudo chown -R hadoop /opt/hdfs`<br/>
+`sudo chown -R hadoop /opt/yarn`<br/>
+`sudo chown -R hadoop /opt/mr-history`
+
 
 ### 2.2. Configuration for Namenode
 Inside the /hadoopx.y.z/etc/hadoop/ directory, edit the following files: **core-site.xml**, **hdfs-site.xml**, **yarn-site.xml**, **mapred-site.xml**. 
