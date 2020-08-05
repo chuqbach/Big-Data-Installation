@@ -239,7 +239,7 @@ done
 Finally, upload all jars in `$SPARK_HOME/jars` to hdfs folder (for example:hdfs:///xxxx:9000/spark-jars):
 ``` 
 hdfs dfs -mkdir /spark-jar
-hdfs dfs -put /opt/spark/jars/* /spark-jar
+hdfs dfs -put /opt/spark/jars/* /spark-jars
 ```
 
 and add following in `hive-site.xml`  
