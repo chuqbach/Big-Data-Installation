@@ -273,7 +273,7 @@ Inside the /hadoopx.y.z/etc/hadoop/ directory, edit the following files: **core-
 ```
 <configuration>
   <property>
-    <name>dfs.datanode.name.dir</name>
+    <name>dfs.datanode.data.dir</name>
     <value>file:///opt/hdfs/datanode</value>
     <description>DataNode directory for namespace and transaction logs storage.</description>
   </property>
