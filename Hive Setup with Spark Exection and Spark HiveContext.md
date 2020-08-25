@@ -93,6 +93,28 @@ Add the following line to the file
 host    all         all         0.0.0.0         0.0.0.0               md5
 ```
 
+If the default pg_hba.conf file contains the following line:
+```
+host all all 127.0.0.1/32 ident
+```
+then the host line specifying md5 authentication shown above must be inserted before this ident line. Failing to do so might lead to the following error
+```
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/opt/hive/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/opt/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Metastore connection URL:        jdbc:postgresql://localhost:5432/metastore
+Metastore Connection Driver :    org.postgresql.Driver
+Metastore connection User:       hive
+org.apache.hadoop.hive.metastore.HiveMetaException: Failed to get schema version.
+Underlying cause: org.postgresql.util.PSQLException : FATAL: Ident authentication failed for user "hive"
+SQL Error code: 0
+Use --verbose for detailed stacktrace.
+*** schemaTool failed ***
+```
+
+
 After all is done, start PostgreSQL Server  
 `sudo service postgresql start`  
 
