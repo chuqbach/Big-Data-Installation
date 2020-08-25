@@ -444,3 +444,12 @@ Time taken: 0.135 seconds, Fetched: 10 row(s)
 ```python
 
 ```
+
+# 3. References
+## 3.1. PostgreSQL Setup and Config
+```
+https://docs.cloudera.com/documentation/enterprise/5-16-x/topics/cm_ig_extrnl_pstgrs.html#cmig_topic_5_6
+```
+```
+https://docs.cloudera.com/documentation/enterprise/5-16-x/topics/cdh_ig_hive_metastore_configure.html
+```
