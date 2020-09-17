@@ -15,7 +15,7 @@
 ## 2. Create Conda environment
  * **Create Conda environment**:
     ```
-        conda create -n my-env -python=3.7
+        conda create -n my-env python=3.7
     ```
     _Must specific the python version, if not, Conda will automatically install the lastes version_
  * **Activate Conda environment**:
