@@ -24,5 +24,6 @@ Python 3.8.0
 - `sudo ln -s apt_pkg.cpython-36m-x86_64-linux-gnu.so apt_pkg.so`
 
 **Ensure to update Python in all Spark worker nodes to the same version**
-```Exception: Python in worker has different version 3.6 than that in driver 3.8, PySpark cannot run with different minor versions. Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+```
+Exception: Python in worker has different version 3.6 than that in driver 3.8, PySpark cannot run with different minor versions. Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
 ```
