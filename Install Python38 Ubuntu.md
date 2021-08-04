@@ -30,3 +30,8 @@ Install pip3
 ```
 Exception: Python in worker has different version 3.6 than that in driver 3.8, PySpark cannot run with different minor versions. Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
 ```
+
+```
+export PYSPARK_PYTHON=python3
+export PYSPARK_DRIVER_PYTHON=python3
+```
