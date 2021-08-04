@@ -18,6 +18,9 @@ python3 --version
 Python 3.8.0
 ```
 
+Install pip3  
+`sudo apt install python3-pip`
+
 **Fix error: ImportError: No module named apt_pkg**
 
 - `cd /usr/lib/python3/dist-packages/`
