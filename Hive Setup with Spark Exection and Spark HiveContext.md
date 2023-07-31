@@ -261,14 +261,14 @@ done
 Finally, upload all jars in `$SPARK_HOME/jars` to hdfs folder (for example:hdfs:///xxxx:9000/spark-jars):
 ``` 
 hdfs dfs -mkdir /spark-jar
-hdfs dfs -put /opt/spark/jars/* /spark-jars
+hdfs dfs -put /opt/spark/jars/* /spark-jar
 ```
 
 and add following in `hive-site.xml`  
 ```
 <property>
   <name>spark.yarn.jars</name>
-  <value>hdfs://xxxx:9000/spark-jars/*</value>
+  <value>hdfs://xxxx:9000/spark-jar/*</value>
 </property>
 ```
 
